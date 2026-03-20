@@ -2,12 +2,18 @@
 
 ## 📌 Overview
 This project predicts whether a customer is likely to churn using a machine learning model.  
-It is an **end-to-end application** with a FastAPI backend, PostgreSQL database, and React frontend dashboard. Users can input customer data, get predictions, and see past prediction history.
+It is a **full-stack, end-to-end application** with a FastAPI backend, PostgreSQL database, and React frontend dashboard. Users can input customer data, get predictions, and view historical prediction history.
+
+---
+
+## 🌐 Live Demo
+- **Frontend Dashboard:** [https://ml-churn-dashboard.vercel.app](https://ml-churn-dashboard.vercel.app)  
+- **Backend API:** [https://ml-churn-api.onrender.com/docs](https://ml-churn-api.onrender.com/docs)
 
 ---
 
 ## 🚀 Tech Stack
-- **Python** – backend logic
+- **Python** – backend & ML
 - **FastAPI** – API endpoints
 - **Scikit-learn / XGBoost** – ML model
 - **PostgreSQL** – database for storing predictions
@@ -19,13 +25,13 @@ It is an **end-to-end application** with a FastAPI backend, PostgreSQL database,
 
 ## 🧩 Features
 1. **Predict customer churn**  
-   - Input customer info and get a “Churn / No Churn” prediction
+   - Input customer info → get prediction: *Churn / No Churn*
 2. **Save predictions**  
-   - Each prediction is stored in a PostgreSQL database
+   - All predictions are stored in PostgreSQL
 3. **View prediction history**  
-   - Frontend can fetch past predictions from the database
+   - Frontend displays all past predictions
 4. **Interactive API docs**  
-   - Access via Swagger UI at `/docs`
+   - Swagger UI available at `/docs` on backend
 
 ---
 
@@ -34,18 +40,27 @@ It is an **end-to-end application** with a FastAPI backend, PostgreSQL database,
 ```bash
 ml-churn-dashboard/
 │── backend/
-│   │── main.py            # FastAPI app with endpoints
-│   │── model.py           # Loads trained ML model
-│   │── schema.py          # Input validation
-│   │── utils.py           # Preprocessing utilities
-│   │── database.py        # DB connection
-│   │── models.py          # DB models
-│   │── churn_model.pkl    # Trained ML model
-│   │── requirements.txt   # Backend dependencies
+│   │── main.py
+│   │── model.py
+│   │── schema.py
+│   │── utils.py
+│   │── database.py
+│   │── models.py
+│   │── churn_model.pkl
+│   │── requirements.txt
 │
-│── frontend/              # React dashboard (Step 2)
+│── frontend/
+│   │── package.json
+│   │── src/
+│       │── App.js
+│       │── index.js
+│       │── api.js
+│       │── components/
+│           │── PredictionForm.js
+│           │── PredictionHistory.js
+│       │── App.css
 │
 │── notebooks/
-│   │── churn_model_training.ipynb # Training and saving model
+│   │── churn_model_training.ipynb
 │
-│── README.md
+└── README.md
